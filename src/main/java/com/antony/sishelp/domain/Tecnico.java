@@ -3,23 +3,28 @@ package com.antony.sishelp.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Entity
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+import com.antony.sishelp.domain.enums.Perfil;
+
+@Entity
 public class Tecnico extends Pessoa {
 	
-//	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 //	@JsonIgnore
-//	@OneToMany(mappedBy = "tecnico")
+	@OneToMany(mappedBy = "tecnico")
 	private List<Chamado> chamados = new ArrayList<>();
 
 	public Tecnico() {
 		super();
-//		addPerfil(Perfil.CLIENTE);
+		addPerfil(Perfil.CLIENTE);
 	}
 
 	public Tecnico(Integer id, String nome, String cpf, String email, String senha) {
 		super(id, nome, cpf, email, senha);
-//		addPerfil(Perfil.CLIENTE);
+		addPerfil(Perfil.CLIENTE);
 	}
 	
 	
