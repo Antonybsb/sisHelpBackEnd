@@ -12,9 +12,7 @@ import com.antony.sishelp.domain.enums.Perfil;
 import com.antony.sishelp.domain.enums.Prioridade;
 import com.antony.sishelp.domain.enums.Status;
 import com.antony.sishelp.repositories.ChamadoRepository;
-import com.antony.sishelp.repositories.ClienteRepository;
 import com.antony.sishelp.repositories.PessoaRepository;
-import com.antony.sishelp.repositories.TecnicoRepository;
 
 @Service
 public class DBService {
