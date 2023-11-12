@@ -49,7 +49,7 @@ public class TecnicoService {
 		}
 		
 		obj = pessoaRepository.findByEmail(objDTO.getEmail());
-		if (obj.isPresent() && obj.get().getId() != objDTO.getId()) {
+		if (obj.isPresent() && obj.get().getId() != objDTO.getId()) { 
 			throw new DataIntegrityViolationException("E-mail já cadastrado no sistema!");
 		}
 	}
