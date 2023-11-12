@@ -3,10 +3,13 @@ package com.antony.sishelp.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.antony.sishelp.domain.Tecnico;
+import com.antony.sishelp.domain.dtos.TecnicoDTO;
 import com.antony.sishelp.repositories.TecnicoRepository;
 import com.antony.sishelp.services.exceptions.ObjectnotFoundException;
 
@@ -23,5 +26,11 @@ public class TecnicoService {
 
 	public List<Tecnico> findAll() {
 		return repository.findAll();
+	}
+
+	public Tecnico create(@Valid TecnicoDTO objDTO) {
+		objDTO.setId(null);
+		Tecnico newObj = new Tecnico(objDTO);
+		return repository.save(newObj);
 	}
 }
