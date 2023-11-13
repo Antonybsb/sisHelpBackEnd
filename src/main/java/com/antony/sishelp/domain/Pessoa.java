@@ -16,6 +16,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 import com.antony.sishelp.domain.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -30,8 +32,10 @@ public abstract class Pessoa implements Serializable  {
 	protected Integer id;
 	protected String nome;
 	
+	@CPF
 	@Column(unique = true)
 	protected String cpf;
+	
 	@Column(unique = true)
 	protected String email;
 	protected String senha;
