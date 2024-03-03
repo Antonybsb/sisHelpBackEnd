@@ -9,8 +9,8 @@ import com.antony.sishelp.domain.Chamado;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class ChamadoDTO implements Serializable {
-
 	private static final long serialVersionUID = 1L;
+	
 	private Integer id;
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataAbertura = LocalDate.now();
